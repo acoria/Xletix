@@ -20,7 +20,9 @@ public class WarmUpUnitProvider1ShortRep extends UnitProvider {
 
     @Override
     protected void initialize() {
+        addUnitToStack(new Exercise("Get ready!", 3));
         List<TrainingUnitName> names = getTrainingUnitNames();
+
         for(int rep = 0; rep < getReps(); rep++){
             for(int i = 0; i < names.size(); i++) {
                 ITrainingUnit trainingUnit = new Exercise(names.get(i).getName(),20);

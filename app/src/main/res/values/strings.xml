@@ -28,4 +28,5 @@
     <string name="tripleTraumaWorkout">Triple Trauma Workout</string>
     <string name="button_training_l">Trainingsplan L</string>
     <string name="button_training_m">Trainingsplan M</string>
+    <string name="ausdauer">Ausdauer</string>
 </resources>

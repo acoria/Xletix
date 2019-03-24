@@ -53,8 +53,7 @@
 			app:layout_constraintTop_toBottomOf="@id/exercise_display"
 			android:scaleType="fitXY"
 			android:layout_marginEnd="20dp"
-			android:visibility="invisible"
-			android:src="@drawable/silhouette_timer"/>
+			android:visibility="invisible"/>
 
 		<TextView android:id="@+id/time_remaining"
 			android:layout_width="wrap_content"

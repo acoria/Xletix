@@ -50,6 +50,13 @@ public class Act_InitialScreen extends AppCompatActivity {
                 showTrainingplan(R.drawable.trainingsplan_l);
             }
         });
+        findViewById(R.id.button_ausdauer).setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                showTrainingplan(R.drawable.ausdauer);
+            }
+        });
+
     }
     private void showTrainingplan(int imageRescource){
         if (infoDialog == null) {
