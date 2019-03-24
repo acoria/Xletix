@@ -8,6 +8,13 @@
     tools:context="com.example.xletix.Activities.Act_InitialScreen"
     android:orientation="vertical"
     android:background="@color/imageBlue">
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/workouts"
+        android:layout_marginStart="5dp"
+        android:layout_marginTop="10dp"
+        android:layout_marginBottom="10dp"/>
     <LinearLayout
         android:id="@+id/lay_workout_buttons"
         android:layout_width="match_parent"
@@ -20,19 +27,31 @@
         <!--android:layout_height="match_parent"-->
         <!--android:scaleType="fitXY"-->
         <!--android:src="@drawable/silhouette_main"/>-->
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="20dp"
+        android:layout_marginStart="5dp"
+        android:text="@string/trainingsplan"/>
     <TableRow
         android:id="@+id/table_row_btn"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_marginTop="15dp">
-        <Button
+        <android.support.design.button.MaterialButton
+            android:id="@+id/button_training_s"
+            android:text="@string/button_training_s"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="10dp"
+            android:layout_weight="1" />
+        <android.support.design.button.MaterialButton
             android:id="@+id/button_training_m"
             android:layout_height="wrap_content"
             android:layout_weight="1"
-            android:layout_marginStart="10dp"
-            android:layout_marginEnd="5dp"
+            android:layout_marginStart="5dp"
             android:text="@string/button_training_m" />
-        <Button android:id="@+id/button_training_l"
+        <android.support.design.button.MaterialButton
+            android:id="@+id/button_training_l"
             android:text="@string/button_training_l"
             android:layout_height="wrap_content"
             android:layout_marginStart="5dp"

@@ -19,6 +19,8 @@ import android.widget.ImageView;
 import android.widget.RelativeLayout;
 import android.widget.TextView;
 
+import com.example.xletix.FRM.Units.Break;
+import com.example.xletix.FRM.Units.Exercise;
 import com.example.xletix.FRM.Units.IUnitProvider;
 import com.example.xletix.FRM.WorkoutSessions.IWorkoutSession;
 import com.example.xletix.FRM.Units.ITrainingUnit;
@@ -57,6 +59,7 @@ public class Act_TimerDisplay extends AppCompatActivity implements ITimerObserve
     String lastId;
     private RelativeLayout infoDialogLayout;
     private AlertDialog infoDialog;
+    IWorkoutSession workoutSession;
 
     @BindView(R.id.exercise_display) TextView exerciseDisplay;
     @BindView(R.id.next_exercise_display) TextView nextExerciseDisplay;
@@ -69,7 +72,6 @@ public class Act_TimerDisplay extends AppCompatActivity implements ITimerObserve
     @BindView(R.id.button_unit_back) Button btnUnitBack;
     @BindView(R.id.fab_home) FloatingActionButton fabHome;
     @BindView(R.id.image_info) ImageView imageInfo;
-    @BindView(R.id.exercise_image) ImageView exerciseImage;
 
 
     //state of the activity
@@ -104,8 +106,7 @@ public class Act_TimerDisplay extends AppCompatActivity implements ITimerObserve
 
     public Act_TimerDisplay(){
         MainUnit.setTestMode(false);
-        IWorkoutSession workoutSession = RuntimeObjectStorage.getWorkoutSession();
-        //this.setTitle("");
+        workoutSession = RuntimeObjectStorage.getWorkoutSession();
         this.unitProvider = workoutSession.getSessionUnitProvider();
         this.unitProvider.reset();
         this.timer = new TrainingTimer(1); //once every second
@@ -223,13 +224,31 @@ public class Act_TimerDisplay extends AppCompatActivity implements ITimerObserve
             nextExerciseDisplay.setVisibility(View.VISIBLE);
         }
         if (activityStateForRestore == STATE_COMPLETED) {
-            fabHome.show();
+//            fabHome.show();
         } else {
-            fabHome.hide();
+//            fabHome.hide();
         }
-        if (currentTrainingUnit.getInfoImage() == 0) {
+        toggleInfoButton();
+
+    }
+
+    private void toggleInfoButton() {
+
+        try{
+            ITrainingUnit trainingUnit = (Exercise) unitProvider.getSneakSuccessor();
+            //show info button for next exercise
+            setupInfoButton(trainingUnit);
+        }catch (ClassCastException e){
+            //show info button for this exercise
+            setupInfoButton(currentTrainingUnit);
+        }
+    }
+
+    private void setupInfoButton(ITrainingUnit trainingUnit) {
+        if(trainingUnit == null){return;}
+        if (trainingUnit.getInfoImage() == 0) {
             imageInfo.setVisibility(View.INVISIBLE);
-            exerciseImage.setOnClickListener(null);
+            imageInfo.setOnClickListener(null);
         } else {
             imageInfo.setVisibility(View.VISIBLE);
 
@@ -247,7 +266,7 @@ public class Act_TimerDisplay extends AppCompatActivity implements ITimerObserve
             });
 
             ImageView image = infoDialogLayout.findViewById(R.id.image_info);
-            image.setImageDrawable(ContextCompat.getDrawable(getActivity(), currentTrainingUnit.getInfoImage()));
+            image.setImageDrawable(ContextCompat.getDrawable(getActivity(), trainingUnit.getInfoImage()));
             image.setOnClickListener(new View.OnClickListener() {
                 @Override
                 public void onClick(View v) {
@@ -259,12 +278,12 @@ public class Act_TimerDisplay extends AppCompatActivity implements ITimerObserve
 
     private void setActivityDisplayToInitial(){
         btnStartTimer.setVisibility(View.VISIBLE); //show button
-        fabHome.hide();
+//        fabHome.hide();
         btnStartTimer.setText("Start");
     }
     private void setActivityDisplayToCompleted(){
         btnStartTimer.setVisibility(View.INVISIBLE); //hide button
-        fabHome.show();
+//        fabHome.show();
         setTextfield("Done", exerciseDisplay);
         timerDisplay.setText("0:00");
     }
@@ -317,6 +336,7 @@ public class Act_TimerDisplay extends AppCompatActivity implements ITimerObserve
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_timer_display);
         ButterKnife.bind(this);
+        setTitle(getResources().getString(R.string.xletix) + " - " + workoutSession.getName());
 
 		/*set button to resume when recreated
 		if (savedInstanceState != null) {...}*/

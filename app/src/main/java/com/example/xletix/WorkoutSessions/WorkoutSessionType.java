@@ -1,3 +1,3 @@
 package com.example.xletix.WorkoutSessions;
 
-public enum WorkoutSessionType {powerPipe, insaneInvert, slipperySlope, instableIsland, tripleTrauma}
+public enum WorkoutSessionType {powerPipe, insaneInvert, slipperySlope, instableIsland, tripleTrauma, barbwireBattle}

@@ -26,7 +26,15 @@
     <string name="insaneInvertWorkout">Insane Invert Workout</string>
     <string name="instableIslandsWorkout">Instable Islands Workout</string>
     <string name="tripleTraumaWorkout">Triple Trauma Workout</string>
-    <string name="button_training_l">Trainingsplan L</string>
-    <string name="button_training_m">Trainingsplan M</string>
+    <string name="button_training_l">L</string>
+    <string name="button_training_m">M</string>
     <string name="ausdauer">Ausdauer</string>
+    <string name="barbwireBattleWorkout">Barbwire Battle</string>
+    <string name="button_training_s">S</string>
+    <string name="workouts">Workouts</string>
+    <string name="trainingsplan">Trainingsplan</string>
+    <string name="trainingsplan_s">Trainingsplan S</string>
+    <string name="trainingsplan_m">Trainingsplan M</string>
+    <string name="trainingsplan_l">Trainingsplan L</string>
+    <string name="xletix">Xletix</string>
 </resources>

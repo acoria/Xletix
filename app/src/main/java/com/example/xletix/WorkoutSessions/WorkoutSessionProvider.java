@@ -13,6 +13,7 @@ public class WorkoutSessionProvider implements IWorkoutSessionProvider {
 
     public WorkoutSessionProvider(IWorkoutSessionFactory sessionFactory){
         workoutSessions = new ArrayList<>();
+        workoutSessions.add(sessionFactory.createBySessionType(WorkoutSessionType.barbwireBattle));
         workoutSessions.add(sessionFactory.createBySessionType(WorkoutSessionType.slipperySlope));
         workoutSessions.add(sessionFactory.createBySessionType(WorkoutSessionType.tripleTrauma));
         workoutSessions.add(sessionFactory.createBySessionType(WorkoutSessionType.powerPipe));

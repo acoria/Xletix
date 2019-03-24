@@ -29,7 +29,7 @@ public class Act_ConfigureExercises extends AppCompatActivity implements IActivi
 		setContentView(R.layout.activity_configure_exercises);
 
 		workoutSession = RuntimeObjectStorage.getWorkoutSession();
-		setTitle("Xletix - " + workoutSession.getName());
+		setTitle(getResources().getString(R.string.xletix) + " - " + workoutSession.getName());
 
 		//pressing the volume keys on the device will affect the audio stream
 		setVolumeControlStream(AudioManager.STREAM_NOTIFICATION);

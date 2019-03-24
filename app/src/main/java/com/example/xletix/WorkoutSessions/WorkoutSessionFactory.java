@@ -4,6 +4,7 @@ import com.example.xletix.Builder.IWorkoutSessionBuilder;
 import com.example.xletix.Builder.WorkoutSessionDirector;
 import com.example.xletix.FRM.WorkoutSessions.IWorkoutSession;
 import com.example.xletix.FRM.WorkoutSessions.IWorkoutSessionFactory;
+import com.example.xletix.Workouts.BarbwireBattleWorkoutSession.BarbwireBattleWorkoutSessionBuilder;
 import com.example.xletix.Workouts.InsaneInvertWorkoutSession.InsaneInvertWorkoutSessionBuilder;
 import com.example.xletix.Workouts.InstableIslandWorkoutSession.InstableIslandWorkoutSessionBuilder;
 import com.example.xletix.Workouts.PowerPipeWorkoutSession.PowerPipeWorkoutSessionBuilder;
@@ -32,6 +33,9 @@ public class WorkoutSessionFactory implements IWorkoutSessionFactory {
                 break;
             case tripleTrauma:
                 builder = new TripleTraumaWorkoutSessionBuilder();
+                break;
+            case barbwireBattle:
+                builder = new BarbwireBattleWorkoutSessionBuilder();
                 break;
         }
         return new WorkoutSessionDirector(builder).build();

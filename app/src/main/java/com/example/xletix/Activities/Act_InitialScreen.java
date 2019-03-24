@@ -38,33 +38,40 @@ public class Act_InitialScreen extends AppCompatActivity {
     }
 
     private void configureTrainingButtons() {
+        findViewById(R.id.button_training_s).setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                showTrainingplan(R.drawable.trainingsplan_s, R.string.trainingsplan_s);
+            }
+        });
         findViewById(R.id.button_training_m).setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                showTrainingplan(R.drawable.trainingsplan_m);
+                showTrainingplan(R.drawable.trainingsplan_m, R.string.trainingsplan_m);
             }
         });
         findViewById(R.id.button_training_l).setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                showTrainingplan(R.drawable.trainingsplan_l);
+                showTrainingplan(R.drawable.trainingsplan_l, R.string.trainingsplan_l);
             }
         });
         findViewById(R.id.button_ausdauer).setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                showTrainingplan(R.drawable.ausdauer);
+                showTrainingplan(R.drawable.ausdauer, R.string.ausdauer);
             }
         });
 
     }
-    private void showTrainingplan(int imageRescource){
+    private void showTrainingplan(int imageRescource, int title){
         if (infoDialog == null) {
             infoDialogLayout = (RelativeLayout) LayoutInflater.from(this).inflate(R.layout.layout_image_info, null);
             infoDialog = new AlertDialog.Builder(this)
                     .setView(infoDialogLayout)
                     .create();
         }
+        infoDialog.setTitle(title);
         infoDialog.show();
         ImageView image = infoDialogLayout.findViewById(R.id.image_info);
         image.setImageDrawable(ContextCompat.getDrawable(this, imageRescource));

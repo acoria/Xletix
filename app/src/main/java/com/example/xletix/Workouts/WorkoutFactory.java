@@ -2,6 +2,7 @@ package com.example.xletix.Workouts;
 
 import com.example.xletix.FRM.Workouts.IWorkoutFactory;
 import com.example.xletix.FRM.Workouts.Workout;
+import com.example.xletix.Workouts.BarbwireBattleWorkoutSession.BarbwireBattleWorkoutSet;
 import com.example.xletix.Workouts.CoolDown.CoolDown;
 import com.example.xletix.Workouts.InsaneInvertWorkoutSession.InsaneInvertWorkoutSet;
 import com.example.xletix.Workouts.InstableIslandWorkoutSession.InstableIslandWorkoutSet;
@@ -38,6 +39,8 @@ public class WorkoutFactory implements IWorkoutFactory {
                 return new InstableIslandWorkoutSet();
             case tripleTraumaWorkoutSet:
                 return new TripleTraumaWorkoutSet();
+            case barbwireBattleWorkoutSet:
+                return new BarbwireBattleWorkoutSet();
         }
         return workout;
     }

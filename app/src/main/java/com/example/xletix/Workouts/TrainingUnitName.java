@@ -23,7 +23,8 @@ public enum TrainingUnitName{
     WALL_SIT(17,"Wall Sit",R.drawable.wall_sit),
     PUSH_UPS(18, "Push Ups", R.drawable.push_ups),
     SPLIT_SQUAT(19,"Split Squat", R.drawable.split_squat),
-    HIGH_PLANK(20,"High Plank", R.drawable.high_plank);
+    HIGH_PLANK(20,"High Plank", R.drawable.high_plank),
+    LEGUAN_WALK(21,"Leguan Walk", R.drawable.leguan_walk);
 
     private int value;
     private String name;
