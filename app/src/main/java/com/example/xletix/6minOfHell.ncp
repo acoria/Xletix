@@ -1,0 +1,191 @@
+<Project>
+  <Name>6minOfHell</Name>
+  <ProjectItem type="NClass.DiagramEditor.ClassDiagram.Diagram" assembly="NClass.DiagramEditor, Version=2.4.1823.0, Culture=neutral, PublicKeyToken=null">
+    <Name>Jan2018</Name>
+    <Language>CSharp</Language>
+    <Entities>
+      <Entity type="Class">
+        <Name>Act_ConfigureExercises</Name>
+        <Access>Public</Access>
+        <Location left="379" top="70" />
+        <Size width="229" height="111" />
+        <Collapsed>False</Collapsed>
+        <Member type="Method">public void showTimer()</Member>
+        <Member type="Method">public void addExerciseList()</Member>
+        <Modifier>None</Modifier>
+      </Entity>
+      <Entity type="Class">
+        <Name>Act_TimerDisplay</Name>
+        <Access>Public</Access>
+        <Location left="828" top="70" />
+        <Size width="229" height="264" />
+        <Collapsed>False</Collapsed>
+        <Member type="Method">public void backOneUnit()</Member>
+        <Member type="Method">public void skipUnit()</Member>
+        <Member type="Method">public void initializeFromNewUnit()</Member>
+        <Member type="Method">public void setActivityDisplayToInitial()</Member>
+        <Member type="Method">public void setActivityDisplayToCompleted()</Member>
+        <Member type="Method">public void setActivityDisplayToPaused()</Member>
+        <Member type="Method">public void setActivityDisplayToStarted()</Member>
+        <Member type="Method">public void setTextfield()</Member>
+        <Member type="Method">public void setUnitDisplaysFromCurrentUnit()</Member>
+        <Member type="Method">public void setTimerDisplay()</Member>
+        <Member type="Method">public void setVolumeControls()</Member>
+        <Modifier>None</Modifier>
+      </Entity>
+      <Entity type="Class">
+        <Name>Break</Name>
+        <Access>Public</Access>
+        <Location left="237" top="800" />
+        <Size width="162" height="77" />
+        <Collapsed>False</Collapsed>
+        <Modifier>None</Modifier>
+      </Entity>
+      <Entity type="Class">
+        <Name>Exercise</Name>
+        <Access>Public</Access>
+        <Location left="515" top="800" />
+        <Size width="162" height="77" />
+        <Collapsed>False</Collapsed>
+        <Modifier>None</Modifier>
+      </Entity>
+      <Entity type="Interface">
+        <Name>TrainingUnit</Name>
+        <Access>Public</Access>
+        <Location left="379" top="549" />
+        <Size width="162" height="61" />
+        <Collapsed>False</Collapsed>
+      </Entity>
+      <Entity type="Class">
+        <Name>MainUnit</Name>
+        <Access>Public</Access>
+        <Location left="379" top="675" />
+        <Size width="162" height="77" />
+        <Collapsed>False</Collapsed>
+        <Modifier>None</Modifier>
+      </Entity>
+      <Entity type="Class">
+        <Name>UnitProvider</Name>
+        <Access>Public</Access>
+        <Location left="379" top="418" />
+        <Size width="162" height="77" />
+        <Collapsed>False</Collapsed>
+        <Modifier>None</Modifier>
+      </Entity>
+      <Entity type="Class">
+        <Name>TrainingTimer</Name>
+        <Access>Public</Access>
+        <Location left="1267" top="532" />
+        <Size width="162" height="77" />
+        <Collapsed>False</Collapsed>
+        <Modifier>None</Modifier>
+      </Entity>
+      <Entity type="Interface">
+        <Name>TimerObserver</Name>
+        <Access>Public</Access>
+        <Location left="979" top="418" />
+        <Size width="162" height="61" />
+        <Collapsed>False</Collapsed>
+      </Entity>
+      <Entity type="Interface">
+        <Name>TimerObserverHandler</Name>
+        <Access>Public</Access>
+        <Location left="1267" top="418" />
+        <Size width="162" height="61" />
+        <Collapsed>False</Collapsed>
+      </Entity>
+    </Entities>
+    <Relationships>
+      <Relationship type="Realization" first="5" second="4">
+        <StartOrientation>Vertical</StartOrientation>
+        <EndOrientation>Vertical</EndOrientation>
+        <BendPoint relativeToStartShape="False">
+          <X>459</X>
+          <Y>643</Y>
+        </BendPoint>
+      </Relationship>
+      <Relationship type="Generalization" first="2" second="5">
+        <StartOrientation>Vertical</StartOrientation>
+        <EndOrientation>Horizontal</EndOrientation>
+      </Relationship>
+      <Relationship type="Generalization" first="3" second="5">
+        <StartOrientation>Vertical</StartOrientation>
+        <EndOrientation>Horizontal</EndOrientation>
+        <BendPoint relativeToStartShape="True">
+          <X>621</X>
+          <Y>775</Y>
+        </BendPoint>
+      </Relationship>
+      <Relationship type="Association" first="6" second="4">
+        <Label>
+        </Label>
+        <StartOrientation>Vertical</StartOrientation>
+        <EndOrientation>Vertical</EndOrientation>
+        <Direction>Unidirectional</Direction>
+        <AssociationType>Association</AssociationType>
+      </Relationship>
+      <Relationship type="Realization" first="1" second="8">
+        <StartOrientation>Vertical</StartOrientation>
+        <EndOrientation>Vertical</EndOrientation>
+        <BendPoint relativeToStartShape="True">
+          <X>1038</X>
+          <Y>359</Y>
+        </BendPoint>
+        <BendPoint relativeToStartShape="False">
+          <X>1038</X>
+          <Y>391</Y>
+        </BendPoint>
+      </Relationship>
+      <Relationship type="Realization" first="7" second="9">
+        <StartOrientation>Vertical</StartOrientation>
+        <EndOrientation>Vertical</EndOrientation>
+        <BendPoint relativeToStartShape="False">
+          <X>1341</X>
+          <Y>504</Y>
+        </BendPoint>
+      </Relationship>
+      <Relationship type="Association" first="9" second="8">
+        <Label>
+        </Label>
+        <StartOrientation>Horizontal</StartOrientation>
+        <EndOrientation>Horizontal</EndOrientation>
+        <BendPoint relativeToStartShape="True">
+          <X>1226</X>
+          <Y>449</Y>
+        </BendPoint>
+        <Direction>Unidirectional</Direction>
+        <AssociationType>Association</AssociationType>
+      </Relationship>
+      <Relationship type="Association" first="0" second="1">
+        <Label>
+        </Label>
+        <StartOrientation>Horizontal</StartOrientation>
+        <EndOrientation>Horizontal</EndOrientation>
+        <Direction>Unidirectional</Direction>
+        <AssociationType>Association</AssociationType>
+      </Relationship>
+      <Relationship type="Association" first="0" second="6">
+        <Label>
+        </Label>
+        <StartOrientation>Vertical</StartOrientation>
+        <EndOrientation>Vertical</EndOrientation>
+        <Direction>Unidirectional</Direction>
+        <AssociationType>Association</AssociationType>
+      </Relationship>
+      <Relationship type="Association" first="1" second="6">
+        <Label>
+        </Label>
+        <StartOrientation>Vertical</StartOrientation>
+        <EndOrientation>Vertical</EndOrientation>
+        <Direction>Unidirectional</Direction>
+        <AssociationType>Association</AssociationType>
+      </Relationship>
+    </Relationships>
+  </ProjectItem>
+  <ProjectItem type="NClass.DiagramEditor.ClassDiagram.Diagram" assembly="NClass.DiagramEditor, Version=2.4.1823.0, Culture=neutral, PublicKeyToken=null">
+    <Name>Jan2018_withSnowboardTimer</Name>
+    <Language>Java</Language>
+    <Entities />
+    <Relationships />
+  </ProjectItem>
+</Project>

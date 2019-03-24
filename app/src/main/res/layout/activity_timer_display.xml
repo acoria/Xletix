@@ -1,0 +1,94 @@
+<?xml version="1.0" encoding="utf-8"?>
+<android.support.design.widget.CoordinatorLayout
+	android:id="@+id/main_content"
+	xmlns:android="http://schemas.android.com/apk/res/android"
+	xmlns:app="http://schemas.android.com/apk/res-auto"
+	android:layout_width="match_parent"
+	android:layout_height="match_parent">
+	<android.support.constraint.ConstraintLayout
+		android:id="@+id/timer_layout"
+		android:layout_width="match_parent"
+		android:layout_height="match_parent"
+		android:keepScreenOn="true"
+		android:background="@color/imageBlue">
+
+		<TableRow
+			android:id="@+id/table_row_btn"
+			android:layout_width="match_parent"
+			android:layout_height="wrap_content"
+			app:layout_constraintTop_toTopOf="parent"
+			app:layout_constraintStart_toStartOf="parent"
+			android:layout_marginTop="15dp">
+			<Button
+				android:id="@+id/button_unit_back"
+				android:layout_height="wrap_content"
+				android:layout_weight="1"
+				android:layout_marginStart="5dp"
+				android:text="@string/button_unit_back" />
+			<Button android:id="@+id/button_start_timer"
+				android:text="@string/button_unit_start"
+				android:layout_height="wrap_content"
+				android:layout_marginStart="5dp"
+				android:layout_weight="1" />
+			<Button
+				android:id="@+id/button_unit_skip"
+				android:layout_weight="1"
+				android:layout_height="wrap_content"
+				android:layout_marginStart="5dp"
+				android:layout_marginEnd="5dp"
+				android:text="@string/button_unit_skip"/>
+		</TableRow>
+
+		<TextView android:id="@+id/exercise_display"
+			android:layout_width="wrap_content"
+			android:layout_height="wrap_content"
+			app:layout_constraintStart_toStartOf="parent"
+			app:layout_constraintTop_toBottomOf="@id/table_row_btn"
+			android:textSize="35sp"/>
+
+		<ImageView android:id="@+id/exercise_image"
+			android:layout_width="wrap_content"
+			android:layout_height="wrap_content"
+			app:layout_constraintEnd_toEndOf="parent"
+			app:layout_constraintTop_toBottomOf="@id/exercise_display"
+			android:scaleType="fitXY"
+			android:layout_marginEnd="20dp"
+			android:visibility="invisible"
+			android:src="@drawable/silhouette_timer"/>
+
+		<TextView android:id="@+id/time_remaining"
+			android:layout_width="wrap_content"
+			android:layout_height="wrap_content"
+			app:layout_constraintStart_toStartOf="parent"
+			app:layout_constraintTop_toTopOf="@+id/exercise_display"
+			app:layout_constraintBottom_toBottomOf="@+id/next_exercise_display"
+			android:textSize="145sp"/>
+		<!--app:layout_constraintTop_toBottomOf="@id/exercise_image"-->
+
+		<TextView android:id="@+id/next_exercise_display"
+			android:layout_width="wrap_content"
+			android:layout_height="wrap_content"
+			app:layout_constraintStart_toStartOf="parent"
+			app:layout_constraintBottom_toBottomOf="parent"
+			android:textSize="25sp"/>
+		<ImageView
+			android:id="@+id/image_info"
+			android:layout_width="wrap_content"
+			android:layout_height="wrap_content"
+			android:src="@drawable/ic_info_white_24dp"
+			app:layout_constraintEnd_toEndOf="parent"
+			app:layout_constraintBottom_toBottomOf="parent"
+			android:layout_marginBottom="20dp"
+			android:layout_marginEnd="20dp"
+			android:visibility="invisible"
+			android:tint="@color/colorPrimary"/>
+	</android.support.constraint.ConstraintLayout>
+	<android.support.design.widget.FloatingActionButton
+		android:id="@+id/fab_home"
+		android:layout_width="wrap_content"
+		android:layout_height="wrap_content"
+		android:layout_gravity="bottom|right"
+		android:layout_margin="16dp"
+		android:src="@drawable/ic_home_white_36dp"
+		app:layout_anchorGravity="bottom|right|end" />
+</android.support.design.widget.CoordinatorLayout>
