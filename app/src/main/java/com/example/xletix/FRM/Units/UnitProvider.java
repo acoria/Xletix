@@ -1,8 +1,6 @@
 package com.example.xletix.FRM.Units;
 
-import android.util.Log;
-
-import com.example.xletix.Workouts.TrainingUnitName;
+import com.example.xletix.Workouts.ExerciseDetails;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -13,13 +11,13 @@ import java.util.List;
 public abstract class UnitProvider implements IUnitProvider {
 
     static final String TAG = UnitProvider.class.getSimpleName();
-    private final List<TrainingUnitName> names;
+    private final List<ExerciseDetails> names;
     private List<ITrainingUnit> trainingUnits = new ArrayList();
     private int reps;
     private int currentPosition = -1;
     private int length;
 
-    public UnitProvider(int reps, List<TrainingUnitName> names){
+    public UnitProvider(int reps, List<ExerciseDetails> names){
         this.reps = reps;
         this.names = names;
         initialize();
@@ -38,7 +36,7 @@ public abstract class UnitProvider implements IUnitProvider {
     }
 
     @Override
-    public List<TrainingUnitName> getTrainingUnitNames(){
+    public List<ExerciseDetails> getTrainingUnitNames(){
         return names;
     }
     protected int getReps(){
@@ -105,6 +103,47 @@ public abstract class UnitProvider implements IUnitProvider {
         }
         return true;
     }
+
+    private boolean isLastRep(int rep){
+        return rep == getReps();
+    }
+
+    private boolean isNumberOfRepsEven(){
+        return getReps()%2 == 0;
+    }
+
+    protected void addUnit(ITrainingUnit trainingUnit, int currentRep){
+        if(needsSplit(trainingUnit,currentRep)){
+            addLeftSidedExercise(trainingUnit);
+            addSideSwap();
+            addRightSidedExercise(trainingUnit);
+        }else{
+            addUnitToStack(trainingUnit);
+        }
+    }
+
+    private void addSideSwap() {
+        addUnitToStack(new Break("Swap side",2));
+    }
+
+    private boolean needsSplit(ITrainingUnit trainingUnit, int currentRep){
+        //exercise needs splitting for each side in last rep
+        return trainingUnit.isOneSided() && isLastRep(currentRep) && !isNumberOfRepsEven();
+    }
+    private void addLeftSidedExercise(ITrainingUnit sourceTrainingUnit){
+        ITrainingUnit newTrainingUnit = new Exercise(sourceTrainingUnit.getTitle() + " - left", sourceTrainingUnit.getLength()/2, true);
+        addExercise(sourceTrainingUnit, newTrainingUnit);
+    }
+    private void addRightSidedExercise(ITrainingUnit sourceTrainingUnit){
+        ITrainingUnit newTrainingUnit = new Exercise(sourceTrainingUnit.getTitle() + " - right", sourceTrainingUnit.getLength()/2, true);
+        addExercise(sourceTrainingUnit, newTrainingUnit);
+    }
+
+    private void addExercise(ITrainingUnit sourceTrainingUnit, ITrainingUnit newTrainingUnit) {
+        newTrainingUnit.setInfoImage(sourceTrainingUnit.getInfoImage());
+        addUnitToStack(newTrainingUnit);
+    }
+
     @Override
     public int getTotalLength() {
         return length;
@@ -124,5 +163,36 @@ public abstract class UnitProvider implements IUnitProvider {
             return trainingUnits.get(currentPosition - 1);
         }
         return null;
+    }
+
+    @Override
+    public int getCurrentExercisePosition() {
+        int currentExercisePosition = 0;
+        for(ITrainingUnit trainingUnit : trainingUnits){
+            try{
+                Exercise exercise = (Exercise) trainingUnit;
+                currentExercisePosition += 1;
+                if(trainingUnit == trainingUnits.get(currentPosition)){
+                    break;
+                }
+            }catch(ClassCastException e){
+                //not important for counting
+            }
+        }
+        return currentExercisePosition;
+    }
+
+    @Override
+    public int getNumberOfExercises() {
+        int numberOfExercises = 0;
+        for(ITrainingUnit trainingUnit : trainingUnits){
+            try{
+                Exercise exercise = (Exercise) trainingUnit;
+                numberOfExercises += 1;
+            }catch(ClassCastException e){
+                //not important for counting
+            }
+        }
+        return numberOfExercises;
     }
 }

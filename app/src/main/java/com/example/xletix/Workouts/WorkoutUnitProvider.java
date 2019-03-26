@@ -9,20 +9,22 @@ import java.util.List;
 
 public class WorkoutUnitProvider extends UnitProvider {
 
-    public WorkoutUnitProvider(int reps, List<TrainingUnitName> names){
+    public WorkoutUnitProvider(int reps, List<ExerciseDetails> names){
         super(reps,names);
     }
 
     @Override
     protected void initialize() {
-        List<TrainingUnitName> names = getTrainingUnitNames();
-        for(int rep = 0; rep < getReps(); rep++){
+        List<ExerciseDetails> names = getTrainingUnitNames();
+        for(int rep = 1; rep <= getReps(); rep++){
             for(int i = 0; i < names.size(); i++) {
-                ITrainingUnit trainingUnit = new Exercise(names.get(i).getName(),30);
-                trainingUnit.setInfoImage(names.get(i).getImageResource());
-                addUnitToStack(trainingUnit);
+                ExerciseDetails exerciseDetails = names.get(i);
+                ITrainingUnit trainingUnit = new Exercise(exerciseDetails.getName(),30, exerciseDetails.isOneSided());
+                trainingUnit.setInfoImage(exerciseDetails.getImageResource());
+                addUnit(trainingUnit,rep);
                 addUnitToStack(new Break(15));
             }
         }
     }
+
 }

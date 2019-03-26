@@ -12,4 +12,8 @@ public class Break extends MainUnit {
         super(breakName, length);
     }
 
+    @Override
+    public boolean isOneSided() {
+        return false;
+    }
 }

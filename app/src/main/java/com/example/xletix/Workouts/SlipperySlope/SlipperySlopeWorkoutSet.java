@@ -4,7 +4,7 @@ import com.example.xletix.FRM.Units.IUnitProvider;
 import com.example.xletix.FRM.WorkoutSessions.IWorkoutSessionIterator;
 import com.example.xletix.FRM.Workouts.Workout;
 import com.example.xletix.R;
-import com.example.xletix.Workouts.TrainingUnitName;
+import com.example.xletix.Workouts.ExerciseDetails;
 import com.example.xletix.Workouts.WorkoutType;
 import com.example.xletix.Workouts.WorkoutUnitProvider;
 
@@ -40,13 +40,13 @@ public class SlipperySlopeWorkoutSet extends Workout implements IWorkoutSessionI
     }
 
     @Override
-    public List<TrainingUnitName> getTrainingUnits() {
+    public List<ExerciseDetails> getTrainingUnits() {
         return Arrays.asList(
-                TrainingUnitName.WALL_SIT,
-                TrainingUnitName.PUSH_UPS,
-                TrainingUnitName.SQUAT_JUMPS,
-                TrainingUnitName.X_SUPERMAN,
-                TrainingUnitName.LUNGE_JUMPS
+                ExerciseDetails.WALL_SIT,
+                ExerciseDetails.PUSH_UPS,
+                ExerciseDetails.SQUAT_JUMPS,
+                ExerciseDetails.X_SUPERMAN,
+                ExerciseDetails.LUNGE_JUMPS
         );
     }
 }

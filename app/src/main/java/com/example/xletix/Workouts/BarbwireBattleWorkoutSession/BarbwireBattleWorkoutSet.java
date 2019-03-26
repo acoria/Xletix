@@ -4,7 +4,7 @@ import com.example.xletix.FRM.Units.IUnitProvider;
 import com.example.xletix.FRM.WorkoutSessions.IWorkoutSessionIterator;
 import com.example.xletix.FRM.Workouts.Workout;
 import com.example.xletix.R;
-import com.example.xletix.Workouts.TrainingUnitName;
+import com.example.xletix.Workouts.ExerciseDetails;
 import com.example.xletix.Workouts.WorkoutType;
 import com.example.xletix.Workouts.WorkoutUnitProvider;
 
@@ -40,13 +40,13 @@ public class BarbwireBattleWorkoutSet extends Workout implements IWorkoutSession
     }
 
     @Override
-    public List<TrainingUnitName> getTrainingUnits() {
+    public List<ExerciseDetails> getTrainingUnits() {
         return Arrays.asList(
-                TrainingUnitName.LEGUAN_WALK,
-                TrainingUnitName.HIGH_PLANK,
-                TrainingUnitName.X_SUPERMAN,
-                TrainingUnitName.SIDE_PLANK,
-                TrainingUnitName.X_BURPEES
+                ExerciseDetails.LEGUAN_WALK,
+                ExerciseDetails.HIGH_PLANK,
+                ExerciseDetails.X_SUPERMAN,
+                ExerciseDetails.SIDE_PLANK,
+                ExerciseDetails.X_BURPEES
         );
     }
 }

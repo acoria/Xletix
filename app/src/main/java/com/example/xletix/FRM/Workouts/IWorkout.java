@@ -1,7 +1,7 @@
 package com.example.xletix.FRM.Workouts;
 
 import com.example.xletix.FRM.Units.IUnitProvider;
-import com.example.xletix.Workouts.TrainingUnitName;
+import com.example.xletix.Workouts.ExerciseDetails;
 import com.example.xletix.Workouts.WorkoutType;
 
 import java.util.List;
@@ -17,5 +17,5 @@ public interface IWorkout {
     int getName();
     int getTotalWorkoutLength();
     int getReps();
-    List<TrainingUnitName> getTrainingUnits();
+    List<ExerciseDetails> getTrainingUnits();
 }

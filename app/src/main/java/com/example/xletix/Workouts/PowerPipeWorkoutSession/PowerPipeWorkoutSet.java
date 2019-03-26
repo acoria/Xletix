@@ -4,7 +4,7 @@ import com.example.xletix.FRM.WorkoutSessions.IWorkoutSessionIterator;
 import com.example.xletix.FRM.Units.IUnitProvider;
 import com.example.xletix.FRM.Workouts.Workout;
 import com.example.xletix.R;
-import com.example.xletix.Workouts.TrainingUnitName;
+import com.example.xletix.Workouts.ExerciseDetails;
 import com.example.xletix.Workouts.WorkoutType;
 import com.example.xletix.Workouts.WorkoutUnitProvider;
 
@@ -40,13 +40,13 @@ public class PowerPipeWorkoutSet extends Workout implements IWorkoutSessionItera
     }
 
     @Override
-    public List<TrainingUnitName> getTrainingUnits() {
+    public List<ExerciseDetails> getTrainingUnits() {
         return Arrays.asList(
-                TrainingUnitName.SPRINT_ON_SPOT,
-                TrainingUnitName.SQUAT_JUMPS,
-                TrainingUnitName.SIDE_PLANK,
-                TrainingUnitName.X_BURPEES,
-                TrainingUnitName.LUNGE_JUMPS
+                ExerciseDetails.SPRINT_ON_SPOT,
+                ExerciseDetails.SQUAT_JUMPS,
+                ExerciseDetails.SIDE_PLANK,
+                ExerciseDetails.X_BURPEES,
+                ExerciseDetails.LUNGE_JUMPS
         );
     }
 }

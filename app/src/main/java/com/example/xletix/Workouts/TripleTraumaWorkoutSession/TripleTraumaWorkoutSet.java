@@ -4,7 +4,7 @@ import com.example.xletix.FRM.Units.IUnitProvider;
 import com.example.xletix.FRM.WorkoutSessions.IWorkoutSessionIterator;
 import com.example.xletix.FRM.Workouts.Workout;
 import com.example.xletix.R;
-import com.example.xletix.Workouts.TrainingUnitName;
+import com.example.xletix.Workouts.ExerciseDetails;
 import com.example.xletix.Workouts.WorkoutType;
 import com.example.xletix.Workouts.WorkoutUnitProvider;
 
@@ -40,13 +40,13 @@ public class TripleTraumaWorkoutSet extends Workout implements IWorkoutSessionIt
     }
 
     @Override
-    public List<TrainingUnitName> getTrainingUnits() {
+    public List<ExerciseDetails> getTrainingUnits() {
         return Arrays.asList(
-                TrainingUnitName.SPRINT_ON_SPOT,
-                TrainingUnitName.SIDE_PLANK,
-                TrainingUnitName.LUNGE_JUMPS,
-                TrainingUnitName.SHOULDER_TAPS,
-                TrainingUnitName.SPLIT_SQUAT
+                ExerciseDetails.SPRINT_ON_SPOT,
+                ExerciseDetails.SIDE_PLANK,
+                ExerciseDetails.LUNGE_JUMPS,
+                ExerciseDetails.SHOULDER_TAPS,
+                ExerciseDetails.SPLIT_SQUAT
         );
     }
 }

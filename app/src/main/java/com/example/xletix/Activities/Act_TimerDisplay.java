@@ -19,7 +19,6 @@ import android.widget.ImageView;
 import android.widget.RelativeLayout;
 import android.widget.TextView;
 
-import com.example.xletix.FRM.Units.Break;
 import com.example.xletix.FRM.Units.Exercise;
 import com.example.xletix.FRM.Units.IUnitProvider;
 import com.example.xletix.FRM.WorkoutSessions.IWorkoutSession;
@@ -60,10 +59,12 @@ public class Act_TimerDisplay extends AppCompatActivity implements ITimerObserve
     private RelativeLayout infoDialogLayout;
     private AlertDialog infoDialog;
     IWorkoutSession workoutSession;
+    int totalNumberOfUnits;
 
     @BindView(R.id.exercise_display) TextView exerciseDisplay;
     @BindView(R.id.next_exercise_display) TextView nextExerciseDisplay;
     @BindView(R.id.time_remaining) TextView timerDisplay;
+//    @BindView(R.id.current_unit_position) TextView currentUnitPosition;
 
     @BindView(R.id.timer_layout) ConstraintLayout layout;
 
@@ -229,8 +230,18 @@ public class Act_TimerDisplay extends AppCompatActivity implements ITimerObserve
 //            fabHome.hide();
         }
         toggleInfoButton();
-
+//        toggleCurrentExercisePosition();
     }
+
+//    private void toggleCurrentExercisePosition() {
+//            try{
+//                Exercise exercise = (Exercise) currentTrainingUnit;
+//                currentUnitPosition.setVisibility(View.VISIBLE);
+//                currentUnitPosition.setText("(" + unitProvider.getCurrentExercisePosition() + "/" + totalNumberOfUnits + ")");
+//            }catch(ClassCastException e){
+//                currentUnitPosition.setVisibility(View.INVISIBLE);
+//            }
+//        }
 
     private void toggleInfoButton() {
 
@@ -279,21 +290,21 @@ public class Act_TimerDisplay extends AppCompatActivity implements ITimerObserve
     private void setActivityDisplayToInitial(){
         btnStartTimer.setVisibility(View.VISIBLE); //show button
 //        fabHome.hide();
-        btnStartTimer.setText("Start");
+        btnStartTimer.setText(R.string.timer_start);
     }
     private void setActivityDisplayToCompleted(){
         btnStartTimer.setVisibility(View.INVISIBLE); //hide button
 //        fabHome.show();
         setTextfield("Done", exerciseDisplay);
-        timerDisplay.setText("0:00");
+        timerDisplay.setText(R.string.timer_0);
     }
     private void setActivityDisplayToPaused(){
         btnStartTimer.setVisibility(View.VISIBLE); //show button
-        btnStartTimer.setText("Resume");
+        btnStartTimer.setText(R.string.timer_resume);
     }
     private void setActivityDisplayToStarted(){
         btnStartTimer.setVisibility(View.VISIBLE); //show button
-        btnStartTimer.setText("Pause");
+        btnStartTimer.setText(R.string.timer_pause);
     }
 
     private void setTextfield(String text, TextView textfield){
@@ -337,6 +348,7 @@ public class Act_TimerDisplay extends AppCompatActivity implements ITimerObserve
         setContentView(R.layout.activity_timer_display);
         ButterKnife.bind(this);
         setTitle(getResources().getString(R.string.xletix) + " - " + workoutSession.getName());
+        totalNumberOfUnits = workoutSession.getSessionUnitProvider().getNumberOfExercises();
 
 		/*set button to resume when recreated
 		if (savedInstanceState != null) {...}*/

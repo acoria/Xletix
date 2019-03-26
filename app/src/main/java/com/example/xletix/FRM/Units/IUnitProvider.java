@@ -1,6 +1,6 @@
 package com.example.xletix.FRM.Units;
 
-import com.example.xletix.Workouts.TrainingUnitName;
+import com.example.xletix.Workouts.ExerciseDetails;
 
 import java.util.List;
 
@@ -18,8 +18,10 @@ public interface IUnitProvider {
     ITrainingUnit getSuccessor();
     boolean hasPredecessor();
     boolean hasSuccessor();
+    int getCurrentExercisePosition();
+    int getNumberOfExercises();
     List<ITrainingUnit> getTrainingUnits();
-    List<TrainingUnitName> getTrainingUnitNames();
+    List<ExerciseDetails> getTrainingUnitNames();
     int getTotalLength();
     ITrainingUnit getSneakSuccessor();
     ITrainingUnit getSneakPredecessor();

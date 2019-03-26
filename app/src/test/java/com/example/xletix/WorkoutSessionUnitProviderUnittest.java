@@ -6,7 +6,7 @@ import com.example.xletix.FRM.Units.UnitProvider;
 import com.example.xletix.FRM.Workouts.IWorkout;
 import com.example.xletix.FRM.WorkoutSessions.IWorkoutSession;
 import com.example.xletix.WorkoutSessions.WorkoutSessionUnitProvider;
-import com.example.xletix.Workouts.TrainingUnitName;
+import com.example.xletix.Workouts.ExerciseDetails;
 
 import org.junit.Before;
 import org.junit.Test;
@@ -25,15 +25,15 @@ import static org.mockito.Mockito.when;
 
 public class WorkoutSessionUnitProviderUnittest {
 
-    WorkoutSessionUnitProvider testObject;
-    IWorkoutSession workoutSession;
-    List<IWorkout> workouts = new ArrayList<>();
-    IWorkout firstWorkout;
-    IWorkout secondWorkout;
-    IWorkout thirdWorkout;
-    MockUnitProvider firstUnitProvider;
-    MockUnitProvider secondUnitProvider;
-    MockUnitProvider thirdUnitProvider;
+    private WorkoutSessionUnitProvider testObject;
+    private IWorkoutSession workoutSession;
+    private List<IWorkout> workouts = new ArrayList<>();
+    private IWorkout firstWorkout;
+    private IWorkout secondWorkout;
+    private IWorkout thirdWorkout;
+    private MockUnitProvider firstUnitProvider;
+    private MockUnitProvider secondUnitProvider;
+    private MockUnitProvider thirdUnitProvider;
 
     @Before
     public void setup(){
@@ -136,12 +136,12 @@ public class WorkoutSessionUnitProviderUnittest {
     }
 }
 class MockUnitProvider extends UnitProvider {
-    static List<TrainingUnitName> names;
+    static List<ExerciseDetails> names;
 
     public ITrainingUnit firstUnit;
     public ITrainingUnit lastUnit;
-    String firstId;
-    String lastId;
+    private String firstId;
+    private String lastId;
 
     public MockUnitProvider() {
         super(1,names);

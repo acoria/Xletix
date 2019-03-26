@@ -4,7 +4,7 @@ import com.example.xletix.FRM.Units.IUnitProvider;
 import com.example.xletix.FRM.WorkoutSessions.IWorkoutSessionIterator;
 import com.example.xletix.FRM.Workouts.Workout;
 import com.example.xletix.R;
-import com.example.xletix.Workouts.TrainingUnitName;
+import com.example.xletix.Workouts.ExerciseDetails;
 import com.example.xletix.Workouts.WorkoutType;
 import com.example.xletix.Workouts.WorkoutUnitProvider;
 
@@ -40,13 +40,13 @@ public class InsaneInvertWorkoutSet extends Workout implements IWorkoutSessionIt
     }
 
     @Override
-    public List<TrainingUnitName> getTrainingUnits() {
+    public List<ExerciseDetails> getTrainingUnits() {
         return Arrays.asList(
-                TrainingUnitName.KNEE_RAISES,
-                TrainingUnitName.SQUAT_JUMPS,
-                TrainingUnitName.SHOULDER_TAPS,
-                TrainingUnitName.BICYCLE_CRUNCH,
-                TrainingUnitName.X_SUPERMAN
+                ExerciseDetails.KNEE_RAISES,
+                ExerciseDetails.SQUAT_JUMPS,
+                ExerciseDetails.SHOULDER_TAPS,
+                ExerciseDetails.BICYCLE_CRUNCH,
+                ExerciseDetails.X_SUPERMAN
         );
     }
 }

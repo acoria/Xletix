@@ -2,7 +2,7 @@ package com.example.xletix;//package xletixUnittests;
 
 import com.example.xletix.FRM.Units.ITrainingUnit;
 import com.example.xletix.FRM.Units.UnitProvider;
-import com.example.xletix.Workouts.TrainingUnitName;
+import com.example.xletix.Workouts.ExerciseDetails;
 
 import org.junit.Before;
 import org.junit.Test;
@@ -18,10 +18,10 @@ import static org.mockito.Mockito.when;
 
 public class UnitProviderUnittest {
 
-    TestUnitProvider unitProvider;
-    String firstId = "1";
-    String secondId = "2";
-    String thirdId = "3";
+    private TestUnitProvider unitProvider;
+    private String firstId = "1";
+    private String secondId = "2";
+    private String thirdId = "3";
 
     @Before
     public void setup(){
@@ -103,7 +103,7 @@ public class UnitProviderUnittest {
 
 class TestUnitProvider extends UnitProvider {
 
-    public static List<TrainingUnitName> names;
+    public static List<ExerciseDetails> names;
     public ITrainingUnit firstTrainingUnit;
     public ITrainingUnit secondTrainingUnit;
     public ITrainingUnit thirdTrainingUnit;

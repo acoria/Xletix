@@ -5,8 +5,18 @@ package com.example.xletix.FRM.Units;
  */
 public class Exercise extends MainUnit {
 
+    private boolean isOneSided;
+
     public Exercise(String exerciseName, int length) {
         super(exerciseName, length);
     }
 
+    public Exercise(String exerciseName, int length, boolean isOneSided){
+        super(exerciseName, length);
+        this.isOneSided = isOneSided;
+    }
+    @Override
+    public boolean isOneSided() {
+        return isOneSided;
+    }
 }

@@ -15,7 +15,7 @@ import com.example.xletix.FRM.WorkoutSessions.IWorkoutSession;
 import com.example.xletix.FRM.Workouts.IWorkout;
 import com.example.xletix.R;
 import com.example.xletix.RuntimeObjectStorage;
-import com.example.xletix.Workouts.TrainingUnitName;
+import com.example.xletix.Workouts.ExerciseDetails;
 
 public class Act_ConfigureExercises extends AppCompatActivity implements IActivityScreen {
 
@@ -81,7 +81,7 @@ public class Act_ConfigureExercises extends AppCompatActivity implements IActivi
 
 	private void addWorkoutToConstLayout(ConstraintLayout constLayout, View viewToAttachTo, IWorkout workout) {
 		View attachToView = viewToAttachTo;
-		for (TrainingUnitName trainingUnitName : workout.getUnitProvider().getTrainingUnitNames()) {
+		for (ExerciseDetails trainingUnitName : workout.getUnitProvider().getTrainingUnitNames()) {
 			ConstraintSet set = new ConstraintSet();
 			TextView textView = new TextView(this);
 			textView.setId(View.generateViewId());
@@ -98,7 +98,7 @@ public class Act_ConfigureExercises extends AppCompatActivity implements IActivi
 
 	private void addWorkoutToLayout(LinearLayout linearLayout, IWorkout workout) {
 
-			for(TrainingUnitName trainingUnitName : workout.getUnitProvider().getTrainingUnitNames()){
+			for(ExerciseDetails trainingUnitName : workout.getUnitProvider().getTrainingUnitNames()){
 				TextView textView = new TextView(this);
 				textView.setText(trainingUnitName.getName());
 				textView.setPaddingRelative(0,0,0,10);

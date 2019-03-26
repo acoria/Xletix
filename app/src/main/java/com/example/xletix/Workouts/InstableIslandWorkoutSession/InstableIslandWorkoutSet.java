@@ -4,7 +4,7 @@ import com.example.xletix.FRM.Units.IUnitProvider;
 import com.example.xletix.FRM.WorkoutSessions.IWorkoutSessionIterator;
 import com.example.xletix.FRM.Workouts.Workout;
 import com.example.xletix.R;
-import com.example.xletix.Workouts.TrainingUnitName;
+import com.example.xletix.Workouts.ExerciseDetails;
 import com.example.xletix.Workouts.WorkoutType;
 import com.example.xletix.Workouts.WorkoutUnitProvider;
 
@@ -40,13 +40,13 @@ public class InstableIslandWorkoutSet extends Workout implements IWorkoutSession
     }
 
     @Override
-    public List<TrainingUnitName> getTrainingUnits() {
+    public List<ExerciseDetails> getTrainingUnits() {
         return Arrays.asList(
-                TrainingUnitName.SPLIT_SQUAT,
-                TrainingUnitName.HIGH_PLANK,
-                TrainingUnitName.SQUAT_JUMPS,
-                TrainingUnitName.SIDE_PLANK,
-                TrainingUnitName.LUNGE_JUMPS
+                ExerciseDetails.SPLIT_SQUAT,
+                ExerciseDetails.HIGH_PLANK,
+                ExerciseDetails.SQUAT_JUMPS,
+                ExerciseDetails.SIDE_PLANK,
+                ExerciseDetails.LUNGE_JUMPS
         );
     }
 }

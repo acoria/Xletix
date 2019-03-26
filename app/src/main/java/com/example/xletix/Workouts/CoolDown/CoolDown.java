@@ -4,7 +4,7 @@ import com.example.xletix.FRM.Workouts.ICoolDown;
 import com.example.xletix.FRM.Units.IUnitProvider;
 import com.example.xletix.FRM.Workouts.Workout;
 import com.example.xletix.R;
-import com.example.xletix.Workouts.TrainingUnitName;
+import com.example.xletix.Workouts.ExerciseDetails;
 import com.example.xletix.Workouts.WorkoutType;
 
 import java.util.Arrays;
@@ -19,13 +19,13 @@ public class CoolDown extends Workout implements ICoolDown {
     }
 
     @Override
-    public List<TrainingUnitName> getTrainingUnits() {
+    public List<ExerciseDetails> getTrainingUnits() {
         return Arrays.asList(
-                TrainingUnitName.SIDE_TOUCHES,
-                TrainingUnitName.GRIP_STRENGTH,
-                TrainingUnitName.SHOULDER_MOBILITY,
-                TrainingUnitName.HIGH_KNEE_STRETCHES,
-                TrainingUnitName.VERTICAL_LUNGE_STRETCH
+                ExerciseDetails.SIDE_TOUCHES,
+                ExerciseDetails.GRIP_STRENGTH,
+                ExerciseDetails.SHOULDER_MOBILITY,
+                ExerciseDetails.HIGH_KNEE_STRETCHES,
+                ExerciseDetails.VERTICAL_LUNGE_STRETCH
         );
     }
 

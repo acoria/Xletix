@@ -9,6 +9,7 @@ public interface ITrainingUnit {
     String getTitle();
     int getLength();
     int getInfoImage();
+    boolean isOneSided();
 
     void setTitle(String title);
     void setInfoImage(int infoImage);

@@ -48,14 +48,12 @@
 			android:layout_marginTop="20dp"
 			android:textSize="35sp"/>
 
-		<ImageView android:id="@+id/exercise_image"
-			android:layout_width="wrap_content"
-			android:layout_height="wrap_content"
-			app:layout_constraintEnd_toEndOf="parent"
-			app:layout_constraintTop_toBottomOf="@id/exercise_display"
-			android:scaleType="fitXY"
-			android:layout_marginEnd="20dp"
-			android:visibility="invisible"/>
+		<!--<TextView-->
+			<!--android:id="@+id/current_unit_position"-->
+			<!--android:layout_width="wrap_content"-->
+			<!--android:layout_height="wrap_content"-->
+			<!--app:layout_constraintEnd_toEndOf="parent"-->
+			<!--app:layout_constraintBottom_toTopOf="@id/time_remaining"/>-->
 
 		<TextView android:id="@+id/time_remaining"
 			android:layout_width="wrap_content"

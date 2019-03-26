@@ -5,7 +5,7 @@ import com.example.xletix.FRM.WorkoutSessions.IWorkoutSession;
 import com.example.xletix.FRM.WorkoutSessions.IWorkoutSessionUnitProvider;
 import com.example.xletix.FRM.Workouts.IWorkout;
 import com.example.xletix.FRM.Workouts.WorkoutIterator;
-import com.example.xletix.Workouts.TrainingUnitName;
+import com.example.xletix.Workouts.ExerciseDetails;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -109,7 +109,7 @@ public class WorkoutSessionUnitProvider implements IWorkoutSessionUnitProvider {
     @Override
     public boolean hasPredecessor() {
         boolean hasPredecessor = currentWorkout.getUnitProvider().hasPredecessor();
-        if (hasPredecessor == true){
+        if (hasPredecessor){
             return true;
         }else if(workoutIterator.hasPrevious()) {
             hasPredecessor = workoutIterator.getPrevious().getUnitProvider().hasPredecessor();
@@ -122,7 +122,7 @@ public class WorkoutSessionUnitProvider implements IWorkoutSessionUnitProvider {
     @Override
     public boolean hasSuccessor() {
         boolean hasSuccessor = currentWorkout.getUnitProvider().hasSuccessor();
-        if (hasSuccessor == true){
+        if (hasSuccessor){
             return true;
         }else if(workoutIterator.hasNext()) {
             hasSuccessor = workoutIterator.getNext().getUnitProvider().hasSuccessor();
@@ -142,8 +142,8 @@ public class WorkoutSessionUnitProvider implements IWorkoutSessionUnitProvider {
     }
 
     @Override
-    public List<TrainingUnitName> getTrainingUnitNames() {
-        List<TrainingUnitName> names = new ArrayList<>();
+    public List<ExerciseDetails> getTrainingUnitNames() {
+        List<ExerciseDetails> names = new ArrayList<>();
         for(IWorkout workout: workoutSession.getWorkouts()){
             names.addAll(workout.getUnitProvider().getTrainingUnitNames());
         }
@@ -183,8 +183,29 @@ public class WorkoutSessionUnitProvider implements IWorkoutSessionUnitProvider {
             length = length + workout.getUnitProvider().getTotalLength();
         }
         return length;
+    }
 
+    @Override
+    public int getCurrentExercisePosition() {
+        int currentPosition = 0;
+        for(IWorkout workout: workoutSession.getWorkouts()) {
+            if(workout != currentWorkout){
+                currentPosition += currentWorkout.getUnitProvider().getNumberOfExercises();
+            }else{
+                currentPosition += currentWorkout.getUnitProvider().getCurrentExercisePosition();
+                break;
+            }
+        }
+        return currentPosition;
+    }
 
+    @Override
+    public int getNumberOfExercises() {
+        int numberOfTrainingUnits = 0;
+        for(IWorkout workout: workoutSession.getWorkouts()) {
+            numberOfTrainingUnits += workout.getUnitProvider().getNumberOfExercises();
+        }
+        return numberOfTrainingUnits;
     }
 }
 
