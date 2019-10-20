@@ -1,13 +1,13 @@
 <?xml version="1.0" encoding="utf-8"?>
-<LinearLayout
-    android:id="@+id/lay_init_screen"
+<LinearLayout android:id="@+id/lay_init_screen"
     xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     tools:context="com.example.xletix.Activities.Act_InitialScreen"
     android:orientation="vertical"
-    android:background="@color/imageBlue">
+    android:background="@color/imageBlue"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
     <TextView
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
@@ -65,4 +65,32 @@
         android:layout_marginStart="10dp"
         android:layout_marginEnd="10dp"
         android:text="@string/ausdauer"/>
+    <android.support.constraint.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal">
+        <android.support.design.button.MaterialButton
+            android:id="@+id/button_youtube_workout"
+            android:layout_height="wrap_content"
+            android:layout_width="wrap_content"
+            app:layout_constraintEnd_toStartOf="@id/button_youtube"
+            app:layout_constraintTop_toTopOf="parent"
+            android:layout_marginEnd="5dp"
+            app:icon="@drawable/icons8_youtube_30dp"
+            app:iconSize="20dp"
+            android:text="@string/workout"
+            app:iconTint="@null" />
+        <android.support.design.button.MaterialButton
+            android:id="@+id/button_youtube"
+            android:layout_width="48dp"
+            android:layout_height="wrap_content"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            android:layout_marginEnd="10dp"
+            app:icon="@drawable/icons8_youtube_30dp"
+            app:iconSize="20dp"
+            app:iconTint="@null"
+            android:layout_gravity="end"/>
+    </android.support.constraint.ConstraintLayout>
+    <!-- iconTint null makes colours visible -->
 </LinearLayout>

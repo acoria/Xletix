@@ -13,7 +13,7 @@
         android:theme="@style/AppTheme">
         <activity
             android:name="com.example.xletix.Activities.Act_ConfigureExercises"
-            android:label="@string/app_name"></activity>
+            android:label="@string/app_name"/>
         <activity
             android:name="com.example.xletix.Activities.Act_TimerDisplay"
             android:configChanges="orientation|screenSize" />
@@ -26,5 +26,8 @@
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
+        <service
+            android:enabled="true"
+            android:name=".PlayYouTubeMusicIntentService"/>
     </application>
 </manifest>

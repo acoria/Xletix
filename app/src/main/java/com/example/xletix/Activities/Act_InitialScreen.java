@@ -1,7 +1,9 @@
 package com.example.xletix.Activities;
 
 import android.app.AlertDialog;
+import android.app.TaskStackBuilder;
 import android.content.Intent;
+import android.net.Uri;
 import android.os.Bundle;
 import android.support.design.button.MaterialButton;
 import android.support.v4.content.ContextCompat;
@@ -11,11 +13,14 @@ import android.view.View;
 import android.widget.ImageView;
 import android.widget.LinearLayout;
 import android.widget.RelativeLayout;
+import android.widget.Toast;
 
 import com.example.xletix.FRM.WorkoutSessions.IWorkoutSession;
 import com.example.xletix.FRM.WorkoutSessions.IWorkoutSessionIterator;
 import com.example.xletix.FRM.WorkoutSessions.IWorkoutSessionProvider;
 import com.example.xletix.FRM.WorkoutSessions.WorkoutSessionIterator;
+import com.example.xletix.PlayYouTubeMusicIntentService;
+import com.example.xletix.YoutubeConfig;
 import com.example.xletix.R;
 import com.example.xletix.RuntimeObjectStorage;
 import com.example.xletix.FRM.WorkoutSessions.IWorkoutSessionFactory;
@@ -34,10 +39,10 @@ public class Act_InitialScreen extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_initial_screen);
         addWorkoutSessionButtons((LinearLayout) findViewById(R.id.lay_workout_buttons));
-        configureTrainingButtons();
+        configureButtons();
     }
 
-    private void configureTrainingButtons() {
+    private void configureButtons() {
         findViewById(R.id.button_training_s).setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
@@ -62,8 +67,37 @@ public class Act_InitialScreen extends AppCompatActivity {
                 showTrainingplan(R.drawable.ausdauer, R.string.ausdauer);
             }
         });
+        findViewById(R.id.button_youtube).setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                openYouTubeApp();
+            }
+        });
+        findViewById(R.id.button_youtube_workout).setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                openYouTubeWorkoutMusic();
+            }
+        });
 
     }
+
+    private void openYouTubeWorkoutMusic() {
+        Intent openWorkoutMusicIntent = new Intent(Intent.ACTION_VIEW, Uri.parse(YoutubeConfig.URL_YOUTUBE_WORKOUT_MUSIC));
+        startActivity(openWorkoutMusicIntent);
+//        startService(new Intent(this, PlayYouTubeMusicIntentService.class));
+    }
+
+    private void openYouTubeApp() {
+        Intent openYouTubeAppIntent = getPackageManager().getLaunchIntentForPackage(YoutubeConfig.PACKAGE_NAME_YOUTUBE_MUSIC);
+        if(openYouTubeAppIntent != null){
+            startActivity(openYouTubeAppIntent);
+        }else{
+            Toast.makeText(this, "Error when trying to open YouTubeMusic app", Toast.LENGTH_SHORT).show();
+        }
+
+    }
+
     private void showTrainingplan(int imageRescource, int title){
         if (infoDialog == null) {
             infoDialogLayout = (RelativeLayout) LayoutInflater.from(this).inflate(R.layout.layout_image_info, null);
