@@ -1,7 +1,7 @@
 <resources>
     <string name="app_name">Xletix</string>
     <string name="action_settings">Settings</string>
-    
+
     <string name="button_config_ok">OK</string>
 
 
@@ -42,4 +42,8 @@
     <string name="timer_resume">Resume</string>
     <string name="timer_pause">Pause</string>
     <string name="musik">Musik</string>
+    <string name="labelYouTubeLink">YouTube Workout Link</string>
+    <string name="update">Update</string>
+    <string name="titleSettings">Settings</string>
+    <string name="settings">Settings</string>
 </resources>
