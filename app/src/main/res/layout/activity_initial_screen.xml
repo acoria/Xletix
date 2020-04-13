@@ -4,7 +4,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context="com.example.xletix.Activities.Act_InitialScreen"
+    tools:context="com.example.yolo.xletix.Act_InitialScreen"
     android:orientation="vertical"
     android:background="@color/imageBlue"
     xmlns:app="http://schemas.android.com/apk/res-auto">

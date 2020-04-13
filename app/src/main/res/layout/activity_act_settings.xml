@@ -4,7 +4,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".Activities.Act_Settings"
+    tools:context=".xletix.Act_Settings"
     android:background="@color/imageBlue">
 
     <TextView

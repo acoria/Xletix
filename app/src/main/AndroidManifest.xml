@@ -1,21 +1,19 @@
 <?xml version="1.0" encoding="utf-8"?>
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
-    package="com.example.xletix">
+    package="com.example.yolo">
+
+    <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE" />
+    <uses-permission android:name="android.permission.READ_PHONE_STATE" />
+    <uses-permission android:name="android.permission.READ_EXTERNAL_STORAGE" />
 
     <application
         android:allowBackup="true"
-        android:icon="@drawable/ic_launcher_xletix"
+        android:icon="@drawable/ic_launcher_yolo"
         android:label="@string/app_name"
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
-        <activity android:name=".Activities.Act_Settings"></activity>
-        <activity
-            android:name=".Activities.Act_ConfigureExercises"
-            android:label="@string/app_name" />
-        <activity
-            android:name=".Activities.Act_TimerDisplay"
-            android:configChanges="orientation|screenSize" />
-        <activity android:name=".Activities.Act_InitialScreen">
+        <activity android:name=".Meditation.MeditationActivity" />
+        <activity android:name=".Springboard.SpringboardActivity">
             <intent-filter>
                 <action
                     android:name="android.intent.action.MAIN"
@@ -24,14 +22,18 @@
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
+        <activity android:name=".xletix.Act_Settings" />
+        <activity
+            android:name=".xletix.Act_ConfigureExercises"
+            android:label="@string/app_name" />
+        <activity
+            android:name=".xletix.Act_TimerDisplay"
+            android:configChanges="orientation|screenSize" />
+        <activity android:name=".xletix.Act_InitialScreen" />
 
         <service
             android:name=".PlayYouTubeMusicIntentService"
             android:enabled="true" />
     </application>
-    <uses-permission android:name="android.permission.READ_PHONE_STATE" />
-    <uses-permission android:name="android.permission.READ_EXTERNAL_STORAGE" />
-
-    <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE" />
 
 </manifest>

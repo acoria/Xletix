@@ -1,0 +1,42 @@
+<?xml version="1.0" encoding="utf-8"?>
+<android.support.constraint.ConstraintLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/layout_meditation"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context="com.example.yolo.Meditation._MeditationActivity"
+    android:background="@drawable/meditation_stone"
+    android:keepScreenOn="true">
+    <TextView
+        android:id="@+id/timer_display"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        android:layout_marginTop="50dp"
+        android:layout_marginStart="50dp"
+        android:textSize="50sp"/>
+    <android.support.design.button.MaterialButton
+        android:id="@+id/button_youtube"
+        android:layout_width="48dp"
+        android:layout_height="wrap_content"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        android:layout_marginEnd="10dp"
+        android:layout_marginTop="10dp"
+        app:icon="@drawable/icons8_youtube_30dp"
+        app:iconSize="20dp"
+        app:iconTint="@null"/>
+    <SeekBar
+        android:id="@+id/timer_slider"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="50dp"
+        android:layout_marginStart="20dp"
+        android:layout_marginEnd="20dp"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintBottom_toBottomOf="parent"
+        android:tickMark="@drawable/tickmark"/>
+</android.support.constraint.ConstraintLayout>

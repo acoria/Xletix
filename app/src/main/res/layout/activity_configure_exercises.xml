@@ -6,7 +6,7 @@
     android:layout_height="match_parent"
     android:orientation="horizontal"
     android:background="@color/imageBlue"
-    tools:context=".Activities.Act_ConfigureExercises">
+    tools:context=".xletix.Act_ConfigureExercises">
         <android.support.constraint.ConstraintLayout
             android:id="@+id/const_warmup"
             android:layout_width="wrap_content"

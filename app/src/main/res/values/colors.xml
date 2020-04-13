@@ -6,4 +6,5 @@
     <color name="darkGray">#383838</color>
     <color name="imageBlue">#F5F5F5</color>
     <color name="colorYouTubeRed">#ff0000</color>
+    <color name="background_springboard">#CCC</color>
 </resources>
