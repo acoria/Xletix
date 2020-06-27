@@ -1,8 +1,8 @@
 package com.example.yolo.xletix.Workouts.CoolDown;
 
-import com.example.yolo.FRM.Units.IExerciseDetails;
+import com.acoria.unittimer.unittimer_api.units.IExerciseDetails;
+import com.acoria.unittimer.unittimer_api.units.IUnitProvider;
 import com.example.yolo.FRM.Workouts.ICoolDown;
-import com.example.yolo.FRM.Units.IUnitProvider;
 import com.example.yolo.FRM.Workouts.Workout;
 import com.example.yolo.R;
 import com.example.yolo.xletix.Workouts.ExerciseDetails;

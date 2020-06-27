@@ -1,7 +1,7 @@
 package com.example.yolo.FRM.WorkoutSessions;
 
-import com.example.yolo.FRM.Units.IExerciseDetails;
-import com.example.yolo.FRM.Units.IUnit;
+import com.acoria.unittimer.unittimer_api.units.IExerciseDetails;
+import com.acoria.unittimer.unittimer_api.units.IUnit;
 import com.example.yolo.FRM.Workouts.IWorkout;
 import com.example.yolo.FRM.Workouts.WorkoutIterator;
 import com.example.yolo.xletix.Workouts.ExerciseDetails;

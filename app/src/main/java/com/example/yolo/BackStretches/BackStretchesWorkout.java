@@ -1,10 +1,9 @@
 package com.example.yolo.BackStretches;
 
-import com.example.yolo.FRM.Units.IExerciseDetails;
-import com.example.yolo.FRM.Units.IUnitProvider;
-import com.example.yolo.FRM.Workouts.Workout;
+import com.acoria.unittimer.unittimer_api.units.IExerciseDetails;
+import com.acoria.unittimer.unittimer_api.units.IUnitProvider;
 import com.example.yolo.FRM.WorkoutSessions.IWorkoutSessionIterator;
-import com.example.yolo.xletix.Workouts.ExerciseDetails;
+import com.example.yolo.FRM.Workouts.Workout;
 import com.example.yolo.xletix.Workouts.WorkoutType;
 
 import java.util.List;

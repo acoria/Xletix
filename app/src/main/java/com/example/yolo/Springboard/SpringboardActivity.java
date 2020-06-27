@@ -2,14 +2,14 @@ package com.example.yolo.Springboard;
 
 import android.content.Intent;
 import android.os.Bundle;
-import android.support.v7.app.AppCompatActivity;
+import androidx.appcompat.app.AppCompatActivity;
 import android.widget.ImageButton;
 import android.widget.Toast;
 
-import com.example.yolo.Meditation.MeditationActivity;
+import com.example.yolo.meditation.MeditationActivity;
 import com.example.yolo.R;
 import com.example.yolo.xletix.Act_InitialScreen;
-import com.example.yolo.xletix.Act_TimerDisplay;
+import com.example.yolo.xletix.TimerDisplayActivity;
 
 import butterknife.BindView;
 import butterknife.ButterKnife;
@@ -30,7 +30,7 @@ public class SpringboardActivity extends AppCompatActivity {
         buttonXletix.setOnClickListener(v -> openActivity(Act_InitialScreen.class));
         buttonMeditation.setOnClickListener(v -> openActivity(MeditationActivity.class));
         buttonBackStretches.setOnClickListener(v -> showJediToast());
-        buttonSnowboardIntermediate.setOnClickListener(v -> openActivity(Act_TimerDisplay.class));
+        buttonSnowboardIntermediate.setOnClickListener(v -> openActivity(TimerDisplayActivity.class));
         buttonSnowboardStretches.setOnClickListener(v -> showJediToast());
     }
 

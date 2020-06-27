@@ -1,6 +1,6 @@
 package com.example.yolo.xletix.Workouts;
 
-import com.example.yolo.FRM.Units.IExerciseDetails;
+import com.acoria.unittimer.unittimer_api.units.IExerciseDetails;
 import com.example.yolo.R;
 
 public enum ExerciseDetails implements IExerciseDetails {

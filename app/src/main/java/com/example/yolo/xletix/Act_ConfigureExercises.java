@@ -3,21 +3,20 @@ package com.example.yolo.xletix;
 import android.content.Intent;
 import android.media.AudioManager;
 import android.os.Bundle;
-import android.support.constraint.ConstraintLayout;
-import android.support.constraint.ConstraintSet;
-import android.support.v7.app.AppCompatActivity;
+import androidx.constraintlayout.widget.ConstraintLayout;
+import androidx.constraintlayout.widget.ConstraintSet;
+import androidx.appcompat.app.AppCompatActivity;
 import android.view.MotionEvent;
 import android.view.View;
 import android.widget.LinearLayout;
 import android.widget.TextView;
 
+import com.acoria.unittimer.unittimer_api.units.IExerciseDetails;
 import com.example.yolo.Activities.IActivityScreen;
-import com.example.yolo.FRM.Units.IExerciseDetails;
 import com.example.yolo.FRM.WorkoutSessions.IWorkoutSession;
 import com.example.yolo.FRM.Workouts.IWorkout;
 import com.example.yolo.R;
 import com.example.yolo.RuntimeObjectStorage;
-import com.example.yolo.xletix.Workouts.ExerciseDetails;
 
 public class Act_ConfigureExercises extends AppCompatActivity implements IActivityScreen {
 
@@ -118,7 +117,7 @@ public class Act_ConfigureExercises extends AppCompatActivity implements IActivi
 	//is called when the button is clicked
 	//public void startTimer(View view) {
 	public void showTimer() {
-		Intent startExercise = new Intent(this, Act_TimerDisplay.class);
+		Intent startExercise = new Intent(this, TimerDisplayActivity.class);
 		startActivity(startExercise);
 	}
 

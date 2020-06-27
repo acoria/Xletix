@@ -1,6 +1,6 @@
 package com.example.yolo.FRM.WorkoutSessions;
 
-import com.example.yolo.FRM.Units.IUnitProvider;
+import com.acoria.unittimer.unittimer_api.units.IUnitProvider;
 import com.example.yolo.FRM.Workouts.IWorkout;
 
 import java.util.List;

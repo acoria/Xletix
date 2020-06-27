@@ -12,7 +12,7 @@
         android:label="@string/app_name"
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
-        <activity android:name=".Meditation.MeditationActivity" />
+        <activity android:name=".meditation.MeditationActivity" />
         <activity android:name=".Springboard.SpringboardActivity">
             <intent-filter>
                 <action
@@ -27,7 +27,7 @@
             android:name=".xletix.Act_ConfigureExercises"
             android:label="@string/app_name" />
         <activity
-            android:name=".xletix.Act_TimerDisplay"
+            android:name=".xletix.TimerDisplayActivity"
             android:configChanges="orientation|screenSize" />
         <activity android:name=".xletix.Act_InitialScreen" />
 

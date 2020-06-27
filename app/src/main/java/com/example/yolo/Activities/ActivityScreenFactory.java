@@ -1,7 +1,7 @@
 package com.example.yolo.Activities;
 
 import com.example.yolo.xletix.Act_ConfigureExercises;
-import com.example.yolo.xletix.Act_TimerDisplay;
+import com.example.yolo.xletix.TimerDisplayActivity;
 
 /**
  * Created by vtewes on 06.01.2018.
@@ -21,7 +21,7 @@ public class ActivityScreenFactory {
                 activityScreen = new Act_ConfigureExercises();
                 break;
             case activityTimerDisplay:
-                activityScreen = new Act_TimerDisplay();
+                activityScreen = new TimerDisplayActivity();
                 break;
         }
 

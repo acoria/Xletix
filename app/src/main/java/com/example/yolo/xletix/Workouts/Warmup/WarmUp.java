@@ -1,6 +1,6 @@
 package com.example.yolo.xletix.Workouts.Warmup;
 
-import com.example.yolo.FRM.Units.IExerciseDetails;
+import com.acoria.unittimer.unittimer_api.units.IExerciseDetails;
 import com.example.yolo.FRM.Workouts.IWarmUp;
 import com.example.yolo.FRM.Workouts.IWorkout;
 import com.example.yolo.FRM.Workouts.Workout;

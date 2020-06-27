@@ -1,9 +1,9 @@
-package com.example.yolo.Meditation
+package com.example.yolo.meditation
 
 import android.content.SharedPreferences
 import android.os.Bundle
 import android.os.PersistableBundle
-import android.support.v7.app.AppCompatActivity
+import androidx.appcompat.app.AppCompatActivity
 import com.example.yolo.GeneralConfig
 import com.example.yolo.R
 import com.example.yolo.YoutubeConfig

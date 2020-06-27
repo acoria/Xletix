@@ -1,7 +1,7 @@
 package com.example.yolo.xletix.Workouts.SlipperySlope;
 
-import com.example.yolo.FRM.Units.IExerciseDetails;
-import com.example.yolo.FRM.Units.IUnitProvider;
+import com.acoria.unittimer.unittimer_api.units.IExerciseDetails;
+import com.acoria.unittimer.unittimer_api.units.IUnitProvider;
 import com.example.yolo.FRM.WorkoutSessions.IWorkoutSessionIterator;
 import com.example.yolo.FRM.Workouts.Workout;
 import com.example.yolo.R;

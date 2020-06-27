@@ -1,12 +1,12 @@
 <?xml version="1.0" encoding="utf-8"?>
-<android.support.constraint.ConstraintLayout
+<androidx.constraintlayout.widget.ConstraintLayout
     xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:id="@+id/layout_meditation"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context="com.example.yolo.Meditation._MeditationActivity"
+    tools:context="com.example.yolo.meditation._MeditationActivity"
     android:background="@drawable/meditation_stone"
     android:keepScreenOn="true">
     <TextView
@@ -18,7 +18,7 @@
         android:layout_marginTop="50dp"
         android:layout_marginStart="50dp"
         android:textSize="50sp"/>
-    <android.support.design.button.MaterialButton
+    <com.google.android.material.button.MaterialButton
         android:id="@+id/button_youtube"
         android:layout_width="48dp"
         android:layout_height="wrap_content"
@@ -39,4 +39,4 @@
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintBottom_toBottomOf="parent"
         android:tickMark="@drawable/tickmark"/>
-</android.support.constraint.ConstraintLayout>
+</androidx.constraintlayout.widget.ConstraintLayout>

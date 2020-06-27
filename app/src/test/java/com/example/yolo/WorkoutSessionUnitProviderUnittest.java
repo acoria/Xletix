@@ -1,13 +1,12 @@
 package com.example.yolo;//package xletixUnittests;
 
 
-import com.example.yolo.FRM.Units.IExerciseDetails;
-import com.example.yolo.FRM.Units.IUnit;
-import com.example.yolo.FRM.Units.UnitProvider;
+import com.acoria.unittimer.unittimer_api.units.IExerciseDetails;
+import com.acoria.unittimer.unittimer_api.units.IUnit;
+import com.acoria.unittimer.unittimer_api.units.UnitProvider;
 import com.example.yolo.FRM.Workouts.IWorkout;
 import com.example.yolo.FRM.WorkoutSessions.IWorkoutSession;
 import com.example.yolo.FRM.WorkoutSessions.WorkoutSessionUnitProvider;
-import com.example.yolo.xletix.Workouts.ExerciseDetails;
 
 import org.junit.Before;
 import org.junit.Test;
@@ -148,7 +147,7 @@ class MockUnitProvider extends UnitProvider {
         super(1,names);
 }
     @Override
-    protected void initialize() {
+    public void initialize() {
         firstUnit = mock(IUnit.class);
         firstId = UUID.randomUUID().toString();
         when(firstUnit.getId()).thenReturn(firstId);
