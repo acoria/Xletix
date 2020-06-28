@@ -23,19 +23,6 @@ class MeditationViewModel(private val soundPlayer: ISoundPlayer) : ViewModel(), 
     private lateinit var timer: ICountDownTimer
     private var remainingTime = 15 * 60 //15min
 
-    /**
-     * This is the job for all coroutines started by this ViewModel.
-     * Cancelling this job will cancel all coroutines started by this ViewModel.
-     */
-    private val viewModelJob = SupervisorJob()
-
-    /**
-     * This is the main scope for all coroutines launched by MainViewModel.
-     * Since we pass viewModelJob, you can cancel all coroutines
-     * launched by uiScope by calling viewModelJob.cancel()
-     */
-    private val uiScope = CoroutineScope(Dispatchers.Main + viewModelJob)
-
     private var _viewStateLiveData = MutableLiveData<MeditationViewState>()
 
     val viewState: LiveData<MeditationViewState>
@@ -109,7 +96,7 @@ class MeditationViewModel(private val soundPlayer: ISoundPlayer) : ViewModel(), 
     }
 
     override fun onNextImpulse(remainingTime: Int) {
-        uiScope.launch {
+        viewModelScope.launch {
             setRemainingTime(remainingTime)
             resultToViewState(Lce.Content(MeditationResult.NewTimerCycleResult))
             playSound()
@@ -196,13 +183,5 @@ class MeditationViewModel(private val soundPlayer: ISoundPlayer) : ViewModel(), 
             return formatTime(remainingTime)
         }
         return null
-    }
-
-    /**
-     * Cancel all coroutines when the ViewModel is cleared
-     */
-    override fun onCleared() {
-        super.onCleared()
-        viewModelJob.cancel()
     }
 }
