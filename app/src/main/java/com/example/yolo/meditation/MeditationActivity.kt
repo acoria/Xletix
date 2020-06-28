@@ -26,7 +26,8 @@ class MeditationActivity : AppCompatActivity() {
         setTitle(R.string.meditation)
         viewModel = MeditationViewModel(SoundPlayer(this))
         //TODO: find out why this shows as nullable
-        viewModel.viewState.observe(this, Observer { render(it!!) } )
+        viewModel.viewState.observe(this, Observer { render(it!!) })
+        viewModel.onEvent(MeditationEvent.InitializeEvent)
 
         layout_meditation.setOnClickListener {
             viewModel.onEvent(MeditationEvent.LayoutClickedEvent)
@@ -60,8 +61,16 @@ class MeditationActivity : AppCompatActivity() {
     }
 
     private fun render(viewState: MeditationViewState) {
-        timer_display.setText(viewState.timerDisplay)
+        setTimerDisplay(viewState)
         setupSlider(viewState)
+    }
+
+    private fun setTimerDisplay(viewState: MeditationViewState) {
+        if (viewState.timerDisplay != null) {
+            timer_display.text = viewState.timerDisplay
+        } else if (viewState.timerDisplayResource != null) {
+            timer_display.setText(viewState.timerDisplayResource)
+        }
     }
 
     override fun onCreateOptionsMenu(menu: Menu): Boolean {
